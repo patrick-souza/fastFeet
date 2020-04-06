@@ -4,7 +4,6 @@ import { RecipientAttributes } from '../Interfaces/RecipientAttributes';
 
 class Recipient extends Model implements RecipientAttributes {
   public id!: number;
-
   public name!: string;
   public street!: string;
   public number!: string;
@@ -12,9 +11,8 @@ class Recipient extends Model implements RecipientAttributes {
   public state!: string;
   public city!: string;
   public zip_code!: string;
-
-  public readonly createdAt: Date;
-  public readonly updatedAt: Date;
+  public createdAt?: Date;
+  public updatedAt?: Date;
 }
 
 Recipient.init(

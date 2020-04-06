@@ -1,22 +1,19 @@
 import { Model, DataTypes } from 'sequelize';
-import bcrypt from 'bcrypt';
 import sequelizeConnection from '../Database/sequelize-connection';
-import UserAttributes from '../Interfaces/UserAttributes';
+import DeliveryAttributes from '../Interfaces/DeliveryAttributes';
+import File from './File';
 
-class User extends Model implements UserAttributes {
+class Delivery extends Model implements DeliveryAttributes {
   public id!: number;
   public name!: string;
   public email!: string;
-  public password!: string;
+
+  public avatar_id?: number;
   public createdAt?: Date;
   public updatedAt?: Date;
-
-  public checkPassword(password: string) {
-    return bcrypt.compare(password, this.password);
-  }
 }
 
-User.init(
+Delivery.init(
   {
     name: {
       type: DataTypes.STRING(128),
@@ -27,10 +24,6 @@ User.init(
       allowNull: false,
       unique: true,
     },
-    password: {
-      type: DataTypes.STRING(128),
-      allowNull: false,
-    },
     createdAt: {
       type: DataTypes.DATE,
     },
@@ -39,16 +32,11 @@ User.init(
     },
   },
   {
-    hooks: {
-      beforeCreate: async (user) => {
-        if (user.password) {
-          user.password = await bcrypt.hash(user.password, 8);
-        }
-      },
-    },
     sequelize: sequelizeConnection,
-    tableName: 'users',
+    tableName: 'deliveres',
   }
 );
 
-export default User;
+Delivery.belongsTo(File, { foreignKey: 'avatar_id', as: 'avatar' });
+
+export default Delivery;

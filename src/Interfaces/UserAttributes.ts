@@ -1,6 +1,6 @@
-import TimeStamps from './Timestamps';
+import Entity from './Entity';
 
-export default interface UserAttributes extends TimeStamps {
+export default interface UserAttributes extends Entity {
   name: string;
   email: string;
   password: string;

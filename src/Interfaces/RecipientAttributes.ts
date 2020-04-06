@@ -1,6 +1,6 @@
-import TimeStamps from './Timestamps';
+import Entity from './Entity';
 
-export interface RecipientAttributes extends TimeStamps {
+export interface RecipientAttributes extends Entity {
   name: string;
   street: string;
   number: string;
