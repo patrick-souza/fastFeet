@@ -4,14 +4,23 @@ import { RecipientAttributes } from '../Interfaces/RecipientAttributes';
 
 class Recipient extends Model implements RecipientAttributes {
   public id!: number;
+
   public name!: string;
+
   public street!: string;
+
   public number!: string;
+
   public complement!: string;
+
   public state!: string;
+
   public city!: string;
+
   public zip_code!: string;
+
   public createdAt?: Date;
+
   public updatedAt?: Date;
 }
 

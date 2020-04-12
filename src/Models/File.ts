@@ -5,10 +5,13 @@ import FileAttributes from '../Interfaces/FileAttributes';
 
 class File extends Model implements FileAttributes {
   public id!: number;
+
   public name!: string;
+
   public path!: string;
 
   public createdAt?: Date;
+
   public updatedAt?: Date;
 }
 
@@ -25,7 +28,7 @@ File.init(
   },
   {
     getterMethods: {
-      url: function (): string {
+      url(): string {
         return `${Config.App_Url}/files/${this.path}`;
       },
     },

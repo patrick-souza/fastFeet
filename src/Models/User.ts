@@ -5,10 +5,15 @@ import UserAttributes from '../Interfaces/UserAttributes';
 
 class User extends Model implements UserAttributes {
   public id!: number;
+
   public name!: string;
+
   public email!: string;
+
   public password!: string;
+
   public createdAt?: Date;
+
   public updatedAt?: Date;
 
   public checkPassword(password: string) {

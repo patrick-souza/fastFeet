@@ -1,15 +1,17 @@
 import { Request, Response } from 'express';
-import User from '../Models/User';
 import jwt from 'jsonwebtoken';
+import User from '../Models/User';
 import authConfig from '../Config/auth-config';
 
 class SessionController {
-  index(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+  index() {
+    throw new Error('Not Implemented Exception');
   }
-  detail(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  detail() {
+    throw new Error('Not Implemented Exception');
   }
+
   async create(request: Request, response: Response) {
     const { email, password } = request.body;
 
@@ -25,11 +27,13 @@ class SessionController {
 
     return response.json({ error: 'Fail authentication' });
   }
-  remove(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  remove() {
+    throw new Error('Not Implemented Exception');
   }
-  update(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  update() {
+    throw new Error('Not Implemented Exception');
   }
 }
 

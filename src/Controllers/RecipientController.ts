@@ -3,12 +3,16 @@ import Recipient from '../Models/Recipient';
 import { RecipientAttributes } from '../Interfaces/RecipientAttributes';
 
 class RecipientController {
-  index(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+  async index(request: Request, response: Response) {
+    const recipients = await Recipient.findAll();
+
+    return response.json(recipients);
   }
-  detail(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  detail() {
+    throw new Error('Not Implemented Exception');
   }
+
   async create(request: Request, response: Response) {
     const {
       name,
@@ -32,9 +36,11 @@ class RecipientController {
 
     return response.json(newRecipient);
   }
-  remove(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  remove() {
+    throw new Error('Not Implemented Exception');
   }
+
   async update(request: Request, response: Response) {
     const {
       name,

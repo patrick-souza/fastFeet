@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import authConfig from '../Config/auth-config';
 import { promisify } from 'util';
+import authConfig from '../Config/auth-config';
 
 export default async function (
   request: Request,

@@ -2,12 +2,14 @@ import { Request, Response } from 'express';
 import File from '../Models/File';
 
 class FileController {
-  index(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+  index() {
+    throw new Error('Not Implemented Exception');
   }
-  detail(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  detail() {
+    throw new Error('Not Implemented Exception');
   }
+
   async create(request: Request, response: Response) {
     const { originalname: name, filename: path } = request.file;
 
@@ -15,11 +17,13 @@ class FileController {
 
     return response.json(newFile);
   }
-  remove(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  remove() {
+    throw new Error('Not Implemented Exception');
   }
-  update(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  update() {
+    throw new Error('Not Implemented Exception');
   }
 }
 export default new FileController();

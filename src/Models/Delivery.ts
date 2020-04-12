@@ -5,11 +5,15 @@ import File from './File';
 
 class Delivery extends Model implements DeliveryAttributes {
   public id!: number;
+
   public name!: string;
+
   public email!: string;
 
   public avatar_id?: number;
+
   public createdAt?: Date;
+
   public updatedAt?: Date;
 }
 

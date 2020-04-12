@@ -8,6 +8,7 @@ class UserController {
 
     return response.json(data);
   }
+
   async detail(request: Request, response: Response) {
     const { id } = request.params;
 
@@ -15,6 +16,7 @@ class UserController {
 
     return response.json(data);
   }
+
   async create(request: Request, response: Response) {
     const { email, name, password } = request.body as UserAttributes;
 
@@ -26,11 +28,13 @@ class UserController {
 
     return response.json(newUser);
   }
-  remove(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  remove() {
+    throw new Error('Not Implemented Exception');
   }
-  update(request: Request, response: Response) {
-    throw 'Not Implemented Exception';
+
+  update() {
+    throw new Error('Not Implemented Exception');
   }
 }
 export default new UserController();

@@ -2,7 +2,6 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    jest: true,
   },
   extends: ['airbnb-base', 'prettier'],
   globals: {
@@ -15,5 +14,21 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier'],
-  rules: {},
+  rules: {
+    'prettier/prettier': 'error',
+    'class-methods-use-this': 'off',
+    'no-param-reassign': 'off',
+    camelcase: 'off',
+    'import/extensions': 'off',
+    'no-unused-vars': 'off',
+    'no-console': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.ts', '.js'],
+      },
+    },
+  },
 };

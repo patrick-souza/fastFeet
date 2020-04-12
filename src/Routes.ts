@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Auth from './Middlewares/Auth';
 import multer from 'multer';
+import Auth from './Middlewares/Auth';
 import multerConfig from './Config/multer-config';
 
 import RecipientController from './Controllers/RecipientController';
@@ -23,6 +23,7 @@ routes.post('/user', UserController.create);
 routes.put('/user', UserController.update);
 
 routes.post('/recipient', RecipientController.create);
+routes.get('/recipient', RecipientController.index);
 routes.put('/recipient/:id', RecipientController.update);
 
 routes.post('/files', upload.single('file'), FileController.create);
